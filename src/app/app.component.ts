@@ -5,6 +5,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { UsuarioService } from '../providers/movie/usuario.service';
 import {Deeplinks} from "@ionic-native/deeplinks";
 import { NativeStorage } from '@ionic-native/native-storage';
+//translate servide
+import { TranslateService } from '@ngx-translate/core';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -43,7 +46,16 @@ export class MyApp {
               public modalCtrl       : ModalController,
               deeplinks              : Deeplinks,
               private nativeStorage: NativeStorage,
+              private translateService: TranslateService,
               ) {
+
+      //translate service
+      platform.ready().then(() => {
+        translateService.setDefaultLang('en');
+        translateService.use('en');           
+    });
+
+      //native functions
     this.initializeApp();
     deeplinks.routeWithNavController(this.nav, {
       '/card': {'card':'DetalheCodePage',},

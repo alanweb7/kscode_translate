@@ -1,0 +1,11 @@
+{
+    "PAGE_TITLE" : "Translation tutorial", 
+    "BUTTONS" : {
+        "btn_en" : "English",
+        "btn_ptBR" : "Portuguese (BR)"
+    },
+    "IN_APP" : "Internal app translation",
+    "FOO": "Foo {{test}}",
+    "HELLO": "Hello",
+    "SLOGAN": "Everything Connects Here!"
+}

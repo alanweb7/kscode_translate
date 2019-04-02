@@ -16,6 +16,10 @@ import { BrowserTab } from '@ionic-native/browser-tab';
 import { Base64 } from '@ionic-native/base64';
 import {  File } from '@ionic-native/file';
 import { NativeStorage } from '@ionic-native/native-storage';
+//tranlate module
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 //import provider
 import { SqliteHelperService } from '../providers/sqlite-helper/sqlite-helper.service';
 import { CodeProvider } from '../providers/code/code';
@@ -26,6 +30,9 @@ import { DetalheCodePageModule } from '../pages/detalhe-code/detalhe-code.module
 import { Autosize} from '../directives/autosize/autosize';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 
+export function HttpLoaderFactory(http: HttpClient) { 
+  return new TranslateHttpLoader(http); 
+}
 
 @NgModule({
   declarations: [
@@ -39,6 +46,13 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
     HttpModule,
     DetalheCodePageModule,
     IonicModule.forRoot(MyApp,),
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+  }),
     IonicStorageModule.forRoot()    
   ],
   bootstrap: [IonicApp],
