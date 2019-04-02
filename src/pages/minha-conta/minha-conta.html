@@ -1,0 +1,91 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+      <ion-title>Minha Conta</ion-title>
+      <ion-buttons end>
+          <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+    </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <div class="topo-user">
+      <ion-avatar >
+          <img (click)="onActionSheet()" src="{{photo_bd}}">
+          <ion-icon color="primary" name="camera"></ion-icon>
+          <h2>{{first_name}} {{last_name}}</h2>
+          <p>{{user_email}}</p>
+      </ion-avatar>
+   
+  </div>
+  <form class="col s12" [formGroup]="contaForm" name="contaForm">
+      <ion-list class="index-formularios2">
+          <ion-item>
+              <ion-label>
+                  <ion-icon name="contact"></ion-icon>
+              </ion-label>
+              <ion-input name="name" type="text" placeholder="Nome" [(ngModel)]="model.first_name" formControlName="first_name"  class="validate" value="{{first_name}}"></ion-input>
+          </ion-item>
+          <div><p *ngIf="errorfirst_name" class="error"> {{messagefirst_name}}</p></div>
+          <ion-item>
+              <ion-label>
+                  <ion-icon name="contact"></ion-icon>
+              </ion-label>
+              <ion-input name="last_name" type="text" placeholder="Sobrenome" [(ngModel)]="model.last_name" formControlName="last_name"  class="validate" value="{{last_name}}"></ion-input>
+          </ion-item>
+          <div><p *ngIf="errorlastname" class="error"> {{messagelastname}}</p></div>
+          <ion-item>
+            <ion-label>
+                <ion-icon name="mail"></ion-icon>
+            </ion-label>
+            <ion-input name="user_email" type="text" placeholder="Email" [(ngModel)]="model.user_email" formControlName="user_email"  class="validate" value="{{user_email}}"></ion-input>
+        </ion-item>
+        <div><p *ngIf="errorlastname" class="error"> {{messagelastname}}</p></div>
+          <ion-item>
+            <ion-label>
+                <ion-icon name="clipboard"></ion-icon>
+            </ion-label>
+            <ion-input type="text" name="nome_empresa" placeholder="Nome Empresa" [(ngModel)]="model.nome_empresa" class="validate" formControlName="nome_empresa" value="{{nome_empresa}}"></ion-input>
+           </ion-item>
+           <div><p *ngIf="errornome_empresa" class="error"> {{messagenome_empresa}}</p></div>
+          <ion-item>
+                <ion-label> <ion-icon name="pricetag"></ion-icon> Segmento </ion-label>
+                <ion-select [(ngModel)]="model.segmento_empresa" (ionChange)="change_segmento($event)" formControlName="segmento_empresa"  placeholder="Selecione">
+                     <ion-option *ngFor="let seg of segmentos"  value="{{seg.name}}">{{seg.name}}</ion-option>
+                </ion-select>
+          </ion-item>
+          <div><p *ngIf="errorsegmento_empresa" class="error"> {{messagensegmento_empresa}}</p></div>
+          <ion-item>
+            <ion-label>
+                <ion-icon name="pin"></ion-icon>
+            </ion-label>
+            <ion-input  [(ngModel)]="model.user_cep" formControlName="user_cep" maxlength="8"   placeholder="CEP"></ion-input >
+            <!-- <ion-input type="text" placeholder="CEP"    class="validate" value="{{user_cep}}"></ion-input> -->
+            <button ion-button block (click)="onSearchByKeyword()">Buscar</button>
+        </ion-item>
+          <div><p *ngIf="errorCEP" class="error"> {{messageCEP}}</p></div> 
+          <ion-item>
+            <ion-label>
+                <ion-icon name="compass"></ion-icon>
+            </ion-label>
+            <ion-input type="text" placeholder="Cidade"   [(ngModel)]="model.cidade_empresa" formControlName="cidade_empresa" class="validate" value="{{cidade_empresa}}"></ion-input>
+          </ion-item>
+          <div><p *ngIf="errorcidade_empresa" class="error"> {{messagecidade_empresa}}</p></div>
+         <ion-item>
+            <ion-label>
+                <ion-icon name="flag"></ion-icon>
+            </ion-label>
+            <ion-input type="text" placeholder="Estado"   [(ngModel)]="model.estado_empresa" formControlName="estado_empresa" class="validate" value="{{estado_empresa}}"></ion-input>
+          </ion-item>
+          <div><p *ngIf="errorEstado" class="error"> {{messageestado_empresa}}</p></div> 
+         
+      </ion-list>
+
+  <div class="bt-edit-dados">
+      <button ion-button block (click)="updateConta()">Salvar</button>
+     <!--  <a>Excluir conta</a> -->
+  </div>
+</form>
+</ion-content>

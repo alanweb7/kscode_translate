@@ -1,0 +1,149 @@
+page-enquete-add {
+    ion-list {
+        padding: 20px
+    }
+    .bt-edit-dados {
+        padding: 0 20px 20px 20px;
+        text-align: center;
+        a {
+            color:darkred;
+            margin: 15px 0 10px 0;
+            display: inline-block;
+        }
+    }
+    .button {
+        background: rgb(5, 32, 73) !important;
+        background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+    }
+    .item{
+        border-bottom: 0.1px solid #ccc;
+    }
+    .item .item-button {
+         padding:  1em; 
+        height: 30px;
+        font-size: 1.2rem;
+      }
+      .item ion-icon {
+        margin-right: 2px;
+        width: 20px;
+        text-align: center;
+        
+    }
+    .fab[mini] {
+        margin: 5px 0px 0px 5px;
+        width: 35px;
+        height: 35px;
+        line-height: 27px;
+        float: right;
+        box-shadow: none;
+        ion-icon {
+            font-size: 1.8em
+        }
+    }
+    .fab {
+        background: rgb(5, 32, 73) !important;
+        background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+    }  
+    .index-formularios2 {
+        
+
+        margin-top: -12px;
+        .item {
+            background: transparent;
+            padding-left: 0;
+            min-height: 3.5em;
+            margin-top: 5px;
+            .label {
+                margin: 0;
+                //width: 30px;
+                display: flex;
+                //justify-content: center;
+                .icon {
+                    margin: 0;
+                    color: #000;
+                }
+            }
+            .text-input {
+              
+                color: #555;
+                color: #555;
+                font-size: 13px;
+                text-align: left;
+               // height: 70px;
+                &::placeholder {
+                    color: #555;
+                    opacity: 0.5;
+                }
+               
+                
+            }
+           
+           
+           
+        }
+      }
+      .list-categorias {
+        margin: 0;
+        //padding-top: 30px;
+        background: #ededed;
+        .box-menu-categorias { padding: 5px 5px 5px 5px;
+           
+            overflow-x: scroll;
+            overflow-y: hidden;
+            white-space: nowrap;
+            button[btn-categoria] {
+                height: 100px;
+                margin: 1px;
+                padding: 10px 15px;
+                background: #fff;
+                letter-spacing: 1px;
+                border-bottom: 3px solid;
+                border-radius: 5px;
+                .button-inner {
+                    flex-wrap: wrap;
+                    h2 {
+                        width: 100%;
+                        margin: 0;
+                        font-size: 0.6em;
+                        font-weight: bold;
+                        color: #488aff;
+                        span {
+                            margin: 5px 0 0 0;
+                            font-size: 0.8em;
+                            font-weight: 300;
+                            padding: 0 8px;
+                            background: #488aff;
+                            border-radius: 50px;
+                            line-height: 18px;
+                            height: 18px;
+                            text-transform: uppercase;
+                            display: inline-block;
+                            color: #fff;
+                        }
+                    }
+                }
+                ion-avatar img, ion-thumbnail img {
+                    display: block;
+                    /* width: 80%; */
+                    width: 100px;
+                }
+                &:active {
+                    background: #488aff;
+                    border-bottom: 0;
+                    h2 {
+                        color: #fff;
+                        span {
+                            background: #fff;
+                            color: #488aff;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

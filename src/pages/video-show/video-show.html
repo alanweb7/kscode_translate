@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Vídeos</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="closeModal()">
+          <ion-icon name="close"></ion-icon>
+       </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-list>
+        <video controls="controls" style="position:absolute;top:10%;left:0;width:100%;height:60%;max-height: 60%;" width="100%" height="60%"  preload="metadata"  webkit-playsinline="webkit-playsinline" class="videoPlayer" *ngIf="post_status == 1">
+          <source src="{{video_link}}" type="video/mp4"/>
+        </video>
+        <div *ngIf="post_status == 'complete'">
+            <iframe width="100%"
+              height="60%"
+              [src]="video_link"
+              (load)="video_link ? handleIFrameLoadEvent() : null"
+              frameborder="0"
+              webkitallowfullscreen 
+              mozallowfullscreen 
+              allowfullscreen
+              style="position:absolute;top:10.5%;left:0;width:100%;height:60%;max-height:60%;">
+          </iframe>
+        </div> 
+    </ion-list>
+</ion-content>

@@ -1,0 +1,80 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+        <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+           
+    <ion-title>ENQUETE</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  <div class="select" (click)="validaPacote()"> <ion-icon color="primary" class="icone_tam" name="camera"></ion-icon> <ion-icon color="primary" class="icone" name="add"></ion-icon></div>
+     
+  <form class="" [formGroup]="loginForm">
+    <ion-list class="index-formularios2">
+        <ion-item>
+            <ion-label>
+                <ion-icon name="help"></ion-icon>
+            </ion-label>
+            <ion-input name="nome" type="text" [(ngModel)]="model.question"  formControlName="question" placeholder="Escreva aqui a sua pergunta" value="{{question}}"></ion-input>
+        </ion-item>
+        <div><p *ngIf="errorquestion" class="error"> {{messagequestion}}</p></div>  
+        <ion-item>
+              <ion-label>
+                    <ion-icon name="information"></ion-icon>
+                </ion-label>
+                <ion-input name="nome" type="text" [(ngModel)]="model.option1"  formControlName="option1" placeholder=" Escreva aqui uma alternativa" value="{{option1}}"></ion-input>
+        </ion-item>
+        <div><p *ngIf="erroroption1" class="error"> {{messageoption1}}</p></div>  
+        <ion-item>
+              <ion-label>
+                    <ion-icon name="information"></ion-icon>
+                </ion-label>
+                <ion-input name="nome" type="text" [(ngModel)]="model.option2"  formControlName="option2" placeholder=" Escreva aqui uma alternativa" value="{{option2}}"></ion-input>
+        </ion-item>
+        <div><p *ngIf="erroroption2" class="error"> {{messageoption2}}</p></div>  
+        <ion-item>
+            <ion-label>
+                <ion-icon name="calendar"></ion-icon>
+            </ion-label>
+            <ion-datetime displayFormat="DD MM  YYYY" [(ngModel)]="model.data_enc"  formControlName="data_enc"></ion-datetime>
+        </ion-item>
+        <div><p *ngIf="errordata_enc" class="error"> {{messagedata_enc}}</p></div>  
+        <ion-item>
+            <ion-label>Encerramento automático ?</ion-label>
+            <ion-toggle [(ngModel)]="model.automatic"   formControlName="automatic"  checked="{{model.automatic}}"></ion-toggle>
+  
+        </ion-item>
+        <ion-item>
+            <ion-label>Ativar enquete ?</ion-label>
+            <ion-toggle [(ngModel)]="model.ask_active"  formControlName="ask_active"  checked="{{model.ask_active}}"></ion-toggle>
+  
+        </ion-item>
+      
+      
+        <ion-list  reorder="true" (ionItemReorder)="reorderItem($event)" *ngIf="images && images.length">
+            <ion-item *ngFor="let image of images">
+                  <ion-thumbnail  >
+                    <img [src]="image.img_link"(click)="viewPhoto(image.img_link)"> 
+                  </ion-thumbnail >  
+                  <!-- <h3>{{image.img_link}}</h3> -->
+                   <button ion-fab mini  item-end (click)="showConfirm_ItemArray(image.img_link)"  *ngIf="!image.id">
+                    <ion-icon name="trash"></ion-icon>
+                   </button>
+                   <button ion-fab mini  item-end (click)="showConfirm(image.id)"  *ngIf="image.id">
+                        <ion-icon name="trash"></ion-icon>
+                   </button>
+            </ion-item>
+           
+                    
+         </ion-list>
+        <div class="bt-edit-dados">
+                <button ion-button block (click)="validaEnvio()">Salvar</button>
+               <!--  <a>Excluir conta</a> -->
+            </div>
+
+    </ion-list>
+   </form>
+</ion-content>

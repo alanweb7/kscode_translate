@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Vídeos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding>
+  
+  <div class="select" (click)="validaPacote()"> <ion-icon color="primary" class="icone_tam" name="videocam"></ion-icon> <ion-icon color="primary" class="icone" name="add"></ion-icon></div>
+ 
+<div>
+  <!--   <progress-bar [progress]="progress"></progress-bar> -->
+   <ion-list>
+    <ion-item  *ngFor="let video of videos">
+      <ion-avatar item-start (click)="ShowVideo(video)">
+        <img src="assets/no-video.png" *ngIf="!video.video_pictures">
+        <img src="{{video.video_pictures}}" *ngIf="video.video_pictures">
+      </ion-avatar>
+      
+      <h3>{{video.file_name}}</h3>
+      <button ion-fab mini  item-end (click)="showConfirm_ItemArray(video.video_link)"  *ngIf="!video.id">
+        <ion-icon name="trash"></ion-icon>
+       </button>
+      <button ion-fab mini  item-end (click)="showConfirm(video.id)" *ngIf="video.id">  
+        <ion-icon name="trash"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+  </div>
+</ion-content>
+<ion-footer> 
+    <ion-toolbar color="primary">
+      <button ion-button block  class="facebook"  color="primary" (click)="selectUpload()">PUBLICAR</button>
+    </ion-toolbar>
+</ion-footer>

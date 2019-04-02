@@ -1,0 +1,58 @@
+page-contato-add {
+    ion-list {
+        padding: 20px
+    }
+    .bt-edit-dados {
+        padding: 0 20px 20px 20px;
+        text-align: center;
+        a {
+            color:darkred;
+            margin: 15px 0 10px 0;
+            display: inline-block;
+        }
+    }
+    .button {
+        background: rgb(5, 32, 73) !important;
+        background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+    }
+    .index-formularios2 {
+        
+
+        margin-top: -12px;
+        .item {
+            background: transparent;
+            padding-left: 0;
+            min-height: 3.5em;
+            margin-top: 5px;
+            .label {
+                margin: 0;
+                //width: 30px;
+                display: flex;
+                //justify-content: center;
+                .icon {
+                    margin: 0;
+                    color: #000;
+                }
+            }
+            .text-input {
+              
+                color: #555;
+                color: #555;
+                font-size: 13px;
+                text-align: left;
+               // height: 70px;
+                &::placeholder {
+                    color: #555;
+                    opacity: 0.5;
+                }
+               
+                
+            }
+           
+           
+           
+        }
+      }
+}

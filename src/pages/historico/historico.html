@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Histórico de Codes
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content >
+   <ion-list>
+      <ion-card class="card-list">
+        <ion-item *ngFor="let code of hist">
+          <ion-avatar item-start (click)="pushPage(code.code)">
+            <img src="{{code.img}}" *ngIf="code.img">
+            <img src="assets/img/no-img.jpeg" *ngIf="!code.img">
+          </ion-avatar>
+          <div (click)="pushPage(code.code)">
+              <h2 >{{code.code}}</h2>
+              <p>{{code.titulo}}</p>
+          </div>
+            <button ion-fab mini  item-end (click)="showConfirm(code.id_serv)">
+              <ion-icon name="trash"></ion-icon>
+            </button>
+            <button  ion-fab mini  item-end (click)="shareSheetShare(code.code,code.card)">
+              <ion-icon ios="ios-share" md="md-share"></ion-icon>
+            </button>
+        </ion-item>
+      </ion-card>
+    </ion-list>
+</ion-content>

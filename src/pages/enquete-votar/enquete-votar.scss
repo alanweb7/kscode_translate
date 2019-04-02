@@ -1,0 +1,120 @@
+page-enquete-votar {
+    .scroll-content {
+      
+        margin-top: 0 !important;
+        background: rgb(5, 32, 73) !important;
+        background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important; filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001cf5', endColorstr='#00bffa', GradientType=1);
+        > h2 {
+            padding: 0 20px;
+            text-align: center;
+            font-size: 1.3em;
+            text-shadow: 0 0 20px #000;
+            margin-top: 10px;
+            color: white;
+        }
+        > h1 {
+            padding: 0 20px;
+            text-align: center;
+            font-size: 1.8em;
+            text-shadow: 0 0 20px #000;
+            margin: 10px 0 0 0;
+            font-weight: bold;
+            color: white;
+        }
+    }
+    .bt-finalizar {
+        padding: 10px;
+    }
+ 
+    
+    ion-avatar {
+        padding: 0;
+        text-align: center;
+        position: relative;
+        img {
+            width: 140px;
+            height: 140px;
+            border-radius: 8%;
+            display: inline-block;
+            margin-top: 25px;
+            box-shadow: 0 0 0 3px #b8b2b2;
+            
+        }
+        ion-icon {
+            background: rgb(5, 32, 73) !important;
+            background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+            background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+            background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            position: absolute;
+            left: 60%;
+            top: 80%;
+            bottom: 0;
+            margin-left: 30px;
+        }
+    
+    }
+    .bt-fechar {
+        background: rgba(255, 255, 255, 0.966);
+        box-shadow: none;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        margin: 0;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 0.7em;
+        color: #000;
+        icon{
+            color: #000;
+        }
+    }
+    
+    .button {
+        
+        &.facebook {
+            background: #32db64;
+            color: #FFF;
+            font-weight: normal;
+        }
+        &.bt-voltar {
+            background: #6e7072;
+            color: #FFF;
+            font-weight: normal;
+        }
+
+        &.bt-cadatro {
+            background: #32db64;
+            color: #FFF;
+            font-weight: normal;
+            margin-top: 0;
+              //  height: 4rem;
+        }
+    }
+    
+    @media (min-width: 0px) {
+        .images {
+            column-count: 2;
+        }
+    }
+ 
+    @media (min-width: 420px) {
+        .images {
+            column-count: 3;
+        }
+    }
+ 
+    @media (min-width: 720px) {
+        .images {
+            column-count: 4;
+        }
+    }
+}

@@ -1,0 +1,159 @@
+page-minha-conta {
+    .topo-user {
+        padding: 0 0 15px 0;
+        ion-avatar {
+            height: 200px;
+            background: rgb(5, 32, 73) !important;
+            background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+            background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+            background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001cf5', endColorstr='#00bffa', GradientType=1) !important;
+            padding: 0;
+            color: #fff;
+            text-align: center;
+            img {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                display: inline-block;
+                margin-top: 25px;
+                box-shadow: 0 0 0 5px #ffffff;
+            }
+            ion-icon {
+                background: #FFF;
+                width: 40px;
+                height: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                position: absolute;
+                left: 48%;
+                top:18%;
+                bottom: 0;
+                margin-left: 30px;
+                font-size: 1.8em;
+            }
+        }
+        h2 {
+            color: #fff;
+            padding-top: 10px;
+            text-align: center;
+            margin: 0;
+            font-size: 1.4em;
+        }
+        p {
+            text-align: center;
+            color: #fff;
+            margin: 7px;
+        }
+    }
+    ion-list {
+        padding: 20px
+    }
+    .bt-edit-dados {
+        padding: 0 20px 20px 20px;
+        text-align: center;
+        a {
+            color:darkred;
+            margin: 15px 0 10px 0;
+            display: inline-block;
+        }
+    }
+    .button {
+        background: rgb(5, 32, 73) !important;
+        background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+    }
+    .index-formularios2 {
+        
+
+        margin-top: -12px;
+        .item {
+            background: transparent;
+            padding-left: 0;
+            min-height: 3.5em;
+            margin-top: 5px;
+            .label {
+                margin: 0;
+                //width: 30px;
+                display: flex;
+                //justify-content: center;
+                .icon {
+                    margin: 0;
+                    color: #000;
+                }
+            }
+            .text-input {
+              
+                color: #555;
+                color: #555;
+                font-size: 13px;
+                text-align: left;
+               // height: 70px;
+                &::placeholder {
+                    color: #555;
+                    opacity: 0.5;
+                }
+               
+                
+            }
+           
+           
+           
+        }
+      }
+     
+      @media (min-width: 0px) {
+        .topo-user {
+            padding: 0 0 15px 0;
+            ion-avatar {
+                height: 200px;
+                background: rgb(5, 32, 73) !important;
+                background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+                background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+                background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#001cf5', endColorstr='#00bffa', GradientType=1) !important;
+                padding: 0;
+                color: #fff;
+                text-align: center;
+                img {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 50%;
+                    display: inline-block;
+                    margin-top: 25px;
+                    box-shadow: 0 0 0 5px #ffffff;
+                }
+                ion-icon {
+                    background: #FFF;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: 48%;
+                    top:13%;
+                    bottom: 0;
+                    margin-left: 30px;
+                    font-size: 1.8em;
+                }
+            }
+            h2 {
+                color: #fff;
+                padding-top: 10px;
+                text-align: center;
+                margin: 0;
+                font-size: 1.4em;
+            }
+            p {
+                text-align: center;
+                color: #fff;
+                margin: 7px;
+            }
+        }
+    }
+}

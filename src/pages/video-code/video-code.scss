@@ -1,0 +1,71 @@
+page-video-code {
+    ion-icon {
+        font-size: 30px;
+        text-align: center;
+    }
+   
+    .item{
+        ion-avatar img {
+            border-radius: 50%;
+            overflow: hidden;
+            width: 80px;
+            height: 80px;
+        }
+        h3{
+            margin-top: 12px;
+        }
+    }
+    .item .item-button {
+         padding:  1em; 
+        height: 30px;
+        font-size: 1.2rem;
+      }
+      .item ion-icon {
+        margin-right: 2px;
+        width: 20px;
+        text-align: center;
+        
+    }
+    .fab[mini] {
+        margin: 5px 0px 0px 5px;
+        width: 45px;
+        height: 45px;
+        line-height: 27px;
+        float: right;
+        box-shadow: none;
+        ion-icon {
+            font-size: 2.8em
+        }
+    }
+    .fab {
+        background: rgb(5, 32, 73) !important;
+        background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+    }        
+   
+    ion-footer {
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 10;
+        display: block;
+        width: 100%;
+        overflow: inherit;
+        color: #fff;
+            font: bold;
+            text-align: center;
+            .button {
+     
+                &.facebook {
+                    background: rgb(5, 32, 73) !important;
+                    background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+                    background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+                    background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+                    color: #FFF;
+                    font-weight: normal;
+                    text-align: center;
+                }
+            }
+      }
+}

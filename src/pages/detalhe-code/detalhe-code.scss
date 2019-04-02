@@ -1,0 +1,274 @@
+page-detalhe-code {
+  
+        .slide-galery {
+            width:100%;
+           height: 250px;
+        
+        } 
+        .toolbar-title {
+            color: #fff;
+            text-transform: uppercase;
+        }
+        .swiper-slide img {
+            width: auto !important;
+            height: 100% !important;
+           
+        } 
+        .bt-busca {
+            position: absolute;
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 9;
+            width: 80%;
+            height: 40px;
+            box-shadow: 0 0 20px #000;
+            ;
+            left: 50%;
+            margin-left: -40%;
+            margin-top: -20px;
+            display: flex;
+            align-items: center;
+            .grid {
+                padding: 0;
+                .row {
+    
+                    .col {
+                        padding: 0;
+                        .icon {
+                            height: 40px;
+                            line-height: 40px;
+                            width: 100%;
+                            text-align: center;
+                            color: white;
+                            background: #0071f8;
+                        }
+                        p {
+                            padding: 0 10px;
+                            font-size: 0.777em;
+                            margin: 0;
+                            line-height: 40px;
+                        }
+                    }
+                }
+            }
+        }
+        .list-categorias {
+            margin: 0;
+            //padding-top: 30px;
+            background: #ededed;
+            .box-menu-categorias { padding: 5px 5px 5px 5px;
+               
+                overflow-x: scroll;
+                overflow-y: hidden;
+                white-space: nowrap;
+                button[btn-categoria] {
+                    height: 100px;
+                    margin: 1px;
+                    padding: 10px 15px;
+                    background: #fff;
+                    letter-spacing: 1px;
+                    border-bottom: 3px solid;
+                    border-radius: 5px;
+                    .button-inner {
+                        flex-wrap: wrap;
+                        h2 {
+                            width: 100%;
+                            margin: 0;
+                            font-size: 0.6em;
+                            font-weight: bold;
+                            color: #488aff;
+                            span {
+                                margin: 5px 0 0 0;
+                                font-size: 0.8em;
+                                font-weight: 300;
+                                padding: 0 8px;
+                                background: #488aff;
+                                border-radius: 50px;
+                                line-height: 18px;
+                                height: 18px;
+                                text-transform: uppercase;
+                                display: inline-block;
+                                color: #fff;
+                            }
+                        }
+                    }
+                    ion-avatar img, ion-thumbnail img {
+                        display: block;
+                        /* width: 80%; */
+                        width: 100px;
+                    }
+                    &:active {
+                        background: #488aff;
+                        border-bottom: 0;
+                        h2 {
+                            color: #fff;
+                            span {
+                                background: #fff;
+                                color: #488aff;
+                            }
+                        }
+                    }
+    
+                }
+            }
+        }
+ion-content.pg-login.content.content {
+    .info-servico p {
+        color: #666;
+        font-size: 1.5rem;
+        line-height: 1.4;
+        text-align: left !important;
+        margin-bottom: 100px;
+    }
+    .button {
+        
+        &.facebook {
+            background: rgb(5, 32, 73) !important;
+            background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+            background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+            background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+            color: #FFF;
+            font-weight: normal;
+        }
+        &.bt-voltar {
+            background: #6e7072;
+            color: #FFF;
+            font-weight: normal;
+        }
+
+        &.bt-cadatro {
+            background: #32db64;
+            color: #FFF;
+            font-weight: normal;
+            margin-top: 0;
+              //  height: 4rem;
+        }
+    }
+        .fab{
+            padding: 0;
+            margin: 0;
+            height: 50px;
+            width: 100%;
+            font-weight: bold;
+            font-size: 14px;
+            box-shadow: none;
+            border-radius: 0;
+            color: #FFF;
+            &.um {
+                background-color: transparent;
+            }
+            &.dois {
+                background: #67bc05;
+                height: 64px;
+                width: 65px;
+                border-radius: 50%;
+                position: absolute;
+                left: 79%;
+                margin: -70px -60px;
+                box-shadow: 0 0 10px #afafaf;
+                border: 4px solid #fff;
+                ion-icon {
+                    background: #000;
+                    mask-image: url(../assets/whatsapp.svg);
+                    -webkit-mask-size: contain;
+                    mask-size: contain;
+                    -webkit-mask-position: 50% 50%;
+                    mask-position: 50% 50%;
+                    -webkit-mask-repeat: no-repeat;
+                    mask-repeat: no-repeat;
+                    background: currentColor;
+                    width: 1.6em;
+                    height: 1.6em;
+                    margin-top: -5px;
+                }
+            }
+        }
+}
+        ion-footer {
+            left: 0;
+            bottom: 0;
+            position: absolute;
+            z-index: 10;
+            display: block;
+            width: 100%;
+            overflow: inherit;
+            .toolbar {
+                height: 50px;
+                min-height: 50px;
+                padding: 0;
+                overflow: inherit;
+                contain: none;
+                .grid {
+                    padding: 0;
+                }
+                [col-4] {
+                    padding: 0;
+                    height: 50px;
+                   
+                }
+                h2 {
+                    margin: 0;
+                    color: #FFF;
+                    position: relative;
+                    top: 10px;
+                    span {
+                        font-size: 12px;
+                        position: relative;
+                        top: -9px;
+                    }
+                    del {
+                        font-size: 12px;
+                        opacity: .3;
+                        position: relative;
+                        top: -4px;
+                    }
+                }
+
+                .button {
+                    padding: 0;
+                    margin: 0;
+                    height: 50px;
+                    width: 100%;
+                    font-weight: bold;
+                    font-size: 14px;
+                    box-shadow: none;
+                    border-radius: 0;
+                    color: #FFF;
+                    &.um {
+                        background-color: transparent;
+                    }
+                    &.dois {
+                        background: #67bc05;
+                        height: 64px;
+                        width: 65px;
+                        border-radius: 50%;
+                        position: absolute;
+                        left: 79%;
+                        margin: -7px -50px;
+                        box-shadow: 0 0 10px #afafaf;
+                        border: 4px solid #fff;
+                        ion-icon {
+                            background: #000;
+                            mask-image: url(../assets/whatsapp.svg);
+                            -webkit-mask-size: contain;
+                            mask-size: contain;
+                            -webkit-mask-position: 50% 50%;
+                            mask-position: 50% 50%;
+                            -webkit-mask-repeat: no-repeat;
+                            mask-repeat: no-repeat;
+                            background: currentColor;
+                            width: 1.6em;
+                            height: 1.6em;
+                            margin-top: -5px;
+                        }
+                    }
+                    ion-icon {
+                        margin-right: 0px;
+                        font-size: 23px;
+                    }
+    
+                }
+            }
+        }
+}

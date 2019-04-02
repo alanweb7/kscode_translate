@@ -1,0 +1,93 @@
+page-documento-code {
+    .list-documentos {
+        margin: 0;
+        position: relative;
+        z-index: 9;
+        padding: 0px;
+        ion-item {
+             padding: 10px;
+            font-weight: normal;
+            ion-avatar {
+                width: 50px;
+                height: 50px;
+                margin-right: 10px !important;
+                img {
+                    width: 100% !important;
+                    height: 100% !important;
+                }
+            }
+            
+            .item-inner {
+                margin-left: 2px !important;
+                ion-label {
+                    margin: 0;
+                    font-size: 12px;
+                    color: #0071f8;
+                    span {
+                        font-size: 10px;
+                        color: #999;
+                        float: left;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }   
+    ion-footer {
+        left: 0;
+        bottom: 0;
+        position: absolute;
+        z-index: 10;
+        display: block;
+        width: 100%;
+        overflow: inherit;
+        color: #fff;
+            font: bold;
+            text-align: center;
+        a{
+            color: #fff;
+            font: bold;
+            text-align: center;
+        }
+      }
+      ion-icon {
+        font-size: 30px;
+        text-align: center;
+        
+        
+    }
+    .item .item-button {
+         padding:  1em; 
+        height: 30px;
+        font-size: 1.2rem;
+      }
+      .item ion-icon {
+        margin-right: 2px;
+        width: 20px;
+        text-align: center;
+        
+    }
+    .fab[mini] {
+        margin: 5px 0px 0px 5px;
+        width: 45px;
+        height: 45px;
+        line-height: 27px;
+        float: right;
+        box-shadow: none;
+        ion-icon {
+            font-size: 2.8em
+        }
+    }
+    .fab {
+        background: rgb(5, 32, 73) !important;
+        background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+    } 
+    p{
+        font-size: 10px;
+        color: #999;
+        float: left;
+        width: 100%;
+    }
+}

@@ -1,0 +1,64 @@
+<ion-header>
+
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>  
+    <ion-title>Contato</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+ <form class="col s12" [formGroup]="cadastroForm" name="cadastroForm">
+    <ion-list class="index-formularios2">
+            <ion-item>
+                <ion-label> <ion-icon name="pricetag"></ion-icon> Tipo </ion-label>
+                <ion-select [(ngModel)]="model.tipo" (ionChange)="change_segmento_tipo($event)" [compareWith]="compareFn"  formControlName="tipo" name="tipo"  placeholder="Selecione">
+                  <ion-option  *ngFor="let p of tipo"  [value]="p.name">{{p.name}}</ion-option>
+                  
+                </ion-select>
+            </ion-item>
+         
+            <ion-item>
+            <ion-label>
+                <ion-icon name="contacts"></ion-icon>
+            </ion-label>
+            <ion-input type="text" placeholder="Departamento" [(ngModel)]="model.titulo" formControlName="titulo" name="titulo" value="{{titulo}}" ></ion-input>
+        </ion-item>
+        <ion-item  *ngIf="isMostraNumber">
+            <ion-label> <ion-icon name="flag"></ion-icon> País </ion-label>
+            <ion-select [(ngModel)]="model.pais" (ionChange)="change_segmento($event)" [compareWith]="compare"  formControlName="pais" name="pais"  placeholder="Selecione">
+              <ion-option  *ngFor="let p of pais"  [value]="p.name">{{p.dial_code}}-{{p.name}}</ion-option>
+              
+            </ion-select>
+    </ion-item>
+        <ion-item *ngIf="isMostraNumber">
+            <ion-label>
+                
+                <ion-icon name="logo-whatsapp" *ngIf="tp == 'whatsapp'"></ion-icon>
+                <ion-icon name="phone-portrait" *ngIf="tp == 'telefone'"></ion-icon>
+               
+            </ion-label>
+            <ion-input type="tel" placeholder="Contato" [(ngModel)]="model.conteudo" formControlName="conteudo" name="conteudo" value="{{ctt_conteudo}}"  [brmasker]="{mask:'(00) 00000-0000', len:15}"></ion-input>
+        </ion-item>
+       <ion-item *ngIf="!isMostraNumber">
+            <ion-label>
+                <ion-icon name="mail" *ngIf="tp == 'email'"></ion-icon>
+                <ion-icon name="globe" *ngIf="tp == 'site'"></ion-icon>
+                <ion-icon name="logo-facebook" *ngIf="tp == 'facebook'"></ion-icon>
+                <ion-icon name="logo-instagram" *ngIf="tp == 'instagram'"></ion-icon>
+                <ion-icon name="logo-linkedin" *ngIf="tp == 'linkedin'"></ion-icon>
+            </ion-label>
+            <ion-input type="text" placeholder="Cole o link..." [(ngModel)]="model.conteudo" formControlName="conteudo" name="conteudo" value="{{ctt_conteudo}}"  ></ion-input>
+        </ion-item> 
+       
+    </ion-list>
+  
+    <div>
+        <button ion-button block color="primary" (click)="create()">PUBLICAR</button>
+        
+    </div>
+ </form>
+</ion-content>

@@ -1,0 +1,172 @@
+<ion-header>
+
+  <ion-navbar  color="primary">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+     
+      <ion-title>
+         {{TagRegCode}}
+      </ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="pg-login">
+    <ion-grid>
+        <ion-row>
+            <ion-col col-12 class="info-servico">
+                <h2>{{titulo}}</h2>
+            </ion-col>
+            <ion-col col-12 class="info-servico" *ngIf="mostra">
+               <div  style="background: black;">
+                    <div *ngIf="video_post_status == 'complete'">
+                            <iframe width="100%"
+                                    height="250px"
+                                    [src]="video_link"
+                                    (load)="video ? handleIFrameLoadEvent() : null"
+                                    frameborder="0"
+                                    webkitallowfullscreen 
+                                    mozallowfullscreen 
+                                    allowfullscreen
+                                    >
+                            </iframe>
+                    </div>       
+                    <video controls="controls" id="myVideo"    preload="metadata"  width="100%"
+                    height="250px"  webkit-playsinline="webkit-playsinline" class="videoPlayer" *ngIf="video_post_status == 1">
+                                <source src="{{video_link}}" type="video/mp4"/>
+                    </video>
+                    <div class="list-categorias" *ngIf="album_vimeo && album_vimeo.length">
+    
+                            <div  class="box-menu-categorias"> 
+                                 
+                                        <button ion-button clear large btn-categoria *ngFor="let video of album_vimeo">
+                                                <ion-thumbnail item-start (click)="selectVideo(video.video_link,video.post_status)">
+                                                    <img src="{{video.video_pictures}}" >
+                                                </ion-thumbnail>
+                                      </button>   
+                              
+                                
+                         </div> 
+                     </div>
+                </div>
+            </ion-col>
+            <ion-col col-12 class="info-servico" *ngIf="galeria && galeria.length">
+                    <div style="position:relative;width:100%;"> 
+                        <ion-slides 
+                        pager="true" 
+                        initialSlide=0
+                        autoplay="3000"
+                        loop=true
+                        autoplay=5000
+                        speed= "300"
+                        class="slide_code">
+                            <ion-slide #mySlider *ngFor="let gal of galeria">
+                                <div class="slide-galery" style="width: 100%;height: 250px;">
+                                  <img src="{{gal.img_link}}" (click)="viewPhoto(gal.img_link)" alt="" style="width: 100%;height: auto;">
+                                </div>
+                            </ion-slide>
+                          </ion-slides>
+                    </div>
+            </ion-col>
+            <ion-col col-12 class="info-servico" *ngIf="descricao">
+                    <p>{{descricao}}</p>
+            </ion-col>
+            <ion-col col-12 class="info-servico"  *ngIf="documento && documento.length">
+                    <ion-list id="verConteDo-list3" *ngFor="let doc of documento">
+                            <a href="{{doc.doc_link}}" >      
+                                <ion-item-sliding class="docitem">
+                              
+                                  <ion-item color="none" id="verConteDo-list-item5">
+                                    {{doc.file_name}} 
+                                    <ion-icon name="document" item-right></ion-icon>
+                                  </ion-item>
+                                  
+                                  <ion-item-options side="left">
+                                    <button ion-button color="positive"></button>
+                                  </ion-item-options>
+                                </ion-item-sliding>
+                              </a>       
+                    </ion-list>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+   <!--  <div *ngIf="ask_id"> 
+        <ion-grid>
+            <ion-row>
+                <ion-col col-6>
+                    <button ion-button block (click)="mostraEnquete()" class="facebook">Enquete</button>  
+                </ion-col>
+                <ion-col col-6>
+                    <button ion-button block (click)="resultEnq()" class="bt-cadatro">Resultado</button>  
+                </ion-col>
+            </ion-row>
+        </ion-grid>   
+    </div> -->
+  
+<ion-fab right bottom *ngIf="whatsapp && whatsapp.length > 1">
+       
+           <button (click)="selectTipo('0')" ion-fab color="light" class="dois">
+               <ion-icon name="call" disabled="true"></ion-icon>
+           </button>
+        
+            
+</ion-fab>
+<ion-fab right bottom  *ngIf="whatsapp && whatsapp.length == 1">
+       <a href="http://api.whatsapp.com/send?1=pt_BR&phone={{calling_code}}{{tel_whatsapp}}" > 
+           <button ion-fab color="light" class="dois">
+               <ion-icon name="call" disabled="true"></ion-icon>
+           </button>
+        </a>
+            
+</ion-fab>
+</ion-content>
+<!-- CONTENT -->
+<ion-footer> 
+    <ion-toolbar color="primary">
+        <ion-grid>
+           <!-- INICIO BOTOES COM WHATSAPP -->
+            <ion-row >
+                <ion-col  class="info-servico" *ngIf="fone && fone.length == 1">
+                    <a href="tel:{{tel_contato}}"> <button ion-button color="light"  class="um" ><ion-icon name="call"></ion-icon></button></a>
+                </ion-col>
+                <ion-col  class="info-servico" *ngIf="fone && fone.length > 1">
+                      <button ion-button color="light"  class="um" (click)="selectTipo('1')" ><ion-icon name="call"></ion-icon></button>
+                </ion-col>
+                <ion-col  class="info-servico"  *ngIf="email && email.length == 1">
+                    <a href="mailto:{{c_email}}"> <button ion-button color="light"  class="um" ><ion-icon name="ios-mail"></ion-icon></button></a>
+                </ion-col>
+                <ion-col  class="info-servico" *ngIf="email && email.length > 1">
+                    <button ion-button color="light"  class="um" (click)="selectTipo('2')"><ion-icon name="ios-mail"></ion-icon></button>
+                </ion-col>
+                <ion-col  class="info-servico" *ngIf="site && site.length == 1">
+                    <button  ion-button color="light" class="um"><ion-icon name="globe" (click)="selectTipo('2')"></ion-icon></button>
+                </ion-col>
+                <ion-col  class="info-servico" *ngIf="site && site.length > 1">
+                    <button  ion-button color="light" class="um" (click)="selectTipo('3')"><ion-icon name="globe" ></ion-icon></button>
+                </ion-col>
+                <ion-col  class="info-servico"  *ngIf="facebook && facebook.length == 1">
+                    <a  href="{{facebookUser}}"  ion-button color="light" class="um"><ion-icon name="logo-facebook"></ion-icon></a>
+                </ion-col>
+                <ion-col  class="info-servico" *ngIf="facebook && facebook.length > 1">
+                    <button  ion-button color="light" class="um" (click)="selectTipo('4')"><ion-icon name="logo-facebook" ></ion-icon></button>
+                </ion-col>
+                <ion-col  class="info-servico" *ngIf="linkedin && linkedin.length == 1">
+                    <a  href="{{linked}}"  ion-button color="light" class="um"><ion-icon name="logo-linkedin" ></ion-icon></a>
+                </ion-col>
+                <ion-col  class="info-servico"  *ngIf="linkedin && linkedin.length > 1">
+                        <button ion-button color="light" class="um" (click)="selectTipo('5')"><ion-icon name="logo-linkedin" ></ion-icon></button>
+                </ion-col>
+                <ion-col  class="info-servico" *ngIf="instagram && instagram.length == 1">
+                    <a href="{{instagramUser}}" ion-button color="light" class="um"><ion-icon name="logo-instagram"></ion-icon></a>
+                </ion-col>
+                <ion-col  class="info-servico" *ngIf="instagram && instagram.length > 1">
+                    <a href="{{instagramUser}}" ion-button color="light" class="um" (click)="selectTipo('6')"><ion-icon name="logo-instagram"></ion-icon></a>
+                </ion-col>
+                
+              
+            </ion-row>
+            <!-- FIM BOTOES COM WHATSAPP -->
+           
+        </ion-grid>
+    </ion-toolbar>
+</ion-footer>

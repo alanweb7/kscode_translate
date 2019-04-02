@@ -1,0 +1,53 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+  <ion-title>Minhas Enquetes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+ <div  style="margin-bottom: 20%;">
+     <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"  (ionClear)="onCancel($event)" placeholder="Pesquisar enquete"></ion-searchbar>
+        <ion-list   *ngFor="let enq of minhas_enq" >
+           <ion-card >
+                <ion-grid>
+                    <ion-row class="box-list">
+                        <ion-col col-10> 
+                           <p>{{enq.question}}</p>
+                        </ion-col>
+                        <ion-col col-2>
+                            Votos<ion-badge>120</ion-badge>
+                        </ion-col>
+                      
+                    </ion-row>
+                </ion-grid>
+               <ion-card-content>
+                <ion-grid>
+                    <ion-row class="botoes">
+                      <ion-col col-3>
+                        <!--  <img src=""> -->
+                      </ion-col>
+                      <ion-col col-9>
+                         <div>
+                            <button ion-fab mini (click)="showConfirm(enq.id)"><ion-icon name="trash"></ion-icon></button>
+                            <button ion-fab mini (click)="addEnquete(enq.id)"><ion-icon name="create"></ion-icon></button>
+                            <button ion-fab mini (click)="viewEnq(enq.id)"><ion-icon name="eye"></ion-icon></button>
+                            <button ion-fab mini *ngIf="ask_id == enq.id"><ion-icon name="checkmark-circle"></ion-icon></button>
+                          </div>
+                      </ion-col >
+                   </ion-row>
+                </ion-grid>
+              </ion-card-content>
+           </ion-card> 
+        </ion-list>
+ <!--   </ng-template>  -->      
+</div>
+<ion-fab  right bottom>
+        <button ion-fab color="primary" (click)="addEnquete('')"><ion-icon name="add"></ion-icon></button>
+    
+</ion-fab>
+</ion-content>

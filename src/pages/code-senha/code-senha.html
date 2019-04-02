@@ -1,0 +1,35 @@
+<ion-content class="pg-avaliacao">
+        <button ion-button icon-only (click)="fecharAvaliacao()" class="bt-fechar">
+              <ion-icon name="close"></ion-icon>
+          </button>
+      
+        <h2>Este code é privado</h2><br>
+  <form class="" [formGroup]="loginForm">
+      <ion-list class="index-formularios">
+            <ion-item>
+              <ion-label>
+                  <ion-icon name="lock" color="primary"></ion-icon>
+              </ion-label>
+              <ion-input name="password" type="{{type}}" [(ngModel)]="model.password" formControlName="password" placeholder="Informe a senha"></ion-input>
+              <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+              <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
+    
+            </ion-item>
+          <div><p *ngIf="errorPassword" class="error"> {{messagePassword}}</p></div>
+      </ion-list>
+  </form> 
+  <div> 
+    
+       
+          <ion-grid>
+              <ion-row>
+                  <ion-col col-6>
+                      <button ion-button block (click)="login()" class="facebook">Entrar</button>  
+                  </ion-col>
+                  <ion-col col-6>
+                      <button ion-button block (click)="voltar()" class="bt-voltar">Cancelar</button>  
+                  </ion-col>
+              </ion-row>
+          </ion-grid>   
+  </div>
+</ion-content>

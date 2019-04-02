@@ -1,0 +1,26 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>IMAGENS</ion-title>
+    
+    </ion-navbar>
+
+</ion-header>
+<ion-content >
+    <div class="select" (click)="ShowCam()"> <ion-icon color="primary" class="icone_tam" name="camera"></ion-icon> <ion-icon color="primary" class="icone" name="add"></ion-icon></div>
+    <div>
+        <ion-list class="index-formularios">
+            <ion-grid >       
+                <ion-row>
+                    <ion-col col-6 col-md-4 col-xl-3 *ngFor="let image of images">
+                        <ion-avatar >
+                            <img [src]="image.img_link"(click)="viewPhoto(image.img_link)"> 
+                            <ion-icon  (click)="showConfirm(image.id)" color="light" name="trash" *ngIf="image.id"></ion-icon>
+                        </ion-avatar>  
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+                        
+        </ion-list>
+   </div>
+</ion-content>

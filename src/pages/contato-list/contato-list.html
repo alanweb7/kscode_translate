@@ -1,0 +1,291 @@
+<ion-header>
+<ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>  
+    <ion-title>Meus Contatos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- AQUI COMEÇA O SEGMENTE DA HOME-->
+  <div>
+    <ion-segment [(ngModel)]="selectedSegment" (ionChange)="onSegmentChanged($event)">
+        <ion-segment-button value="0">
+           <ion-icon name="logo-whatsapp"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="1">
+           <ion-icon name="phone-portrait"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="2">
+          <ion-icon name="mail"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="3">
+          <ion-icon name="globe"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="4">
+          <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="5">
+          <ion-icon ios="logo-instagram" md="logo-instagram"></ion-icon>
+        </ion-segment-button>
+        <ion-segment-button value="6">
+          <ion-icon ios="logo-linkedin" md="logo-linkedin"></ion-icon>
+        </ion-segment-button>
+       
+        
+    </ion-segment>
+  </div>
+  <div [ngSwitch]="selectedSegment" style="margin-bottom: 15%;">
+    <ion-slides #mySlider  (ionSlideDidChange)="onSlideChanged($event)" class="segment-slide">
+      <ion-slide>
+          <p *ngIf="whatsapp && whatsapp.length == 0; else Listwhatsapp">Não há registros</p>
+          <ng-template #Listwhatsapp> 
+          <ion-list *ngFor="let whats of whatsapp" >
+                  <ion-card >
+                    <ion-grid>
+                        <ion-row class="box-list">
+                            <ion-col col-12> 
+                              <p>{{whats.titulo}}</p>
+                            </ion-col>
+                                                  
+                        </ion-row>
+                    </ion-grid>
+                  <ion-card-content>
+                    <ion-grid>
+                        <ion-row class="botoes">
+                            <ion-col col-6>
+                     
+                                {{whats.conteudo}}
+                              </ion-col>
+                              <ion-col col-6>
+                            <div>
+                                <button ion-fab mini (click)="showConfirm(whats.id,0)"><ion-icon name="trash"></ion-icon></button>
+                                <button ion-fab mini (click)="newSetor(whats.id)"><ion-icon name="create"></ion-icon></button>
+                              
+                              </div>
+                          </ion-col >
+                      </ion-row>
+                    </ion-grid>
+                  </ion-card-content>
+                  </ion-card> 
+          </ion-list>     
+        </ng-template>      
+      </ion-slide>
+      <ion-slide>
+          <p *ngIf="fone && fone.length == 0; else Listfone">Não há registros</p>
+          <ng-template #Listfone> 
+          <ion-list *ngFor="let fone of fone" >
+              <ion-card >
+                <ion-grid>
+                    <ion-row class="box-list">
+                        <ion-col col-12> 
+                          <p>{{fone.titulo}}</p>
+                        </ion-col>
+                                              
+                    </ion-row>
+                </ion-grid>
+              <ion-card-content>
+                <ion-grid>
+                    <ion-row class="botoes">
+                        <ion-col col-6>
+                 
+                            {{fone.conteudo}}
+                          </ion-col>
+                          <ion-col col-6>
+                        <div>
+                            <button ion-fab mini (click)="showConfirm(fone.id,0)"><ion-icon name="trash"></ion-icon></button>
+                            <button ion-fab mini (click)="newSetor(fone.id)"><ion-icon name="create"></ion-icon></button>
+                          
+                          </div>
+                      </ion-col >
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+              </ion-card> 
+          </ion-list>  
+        </ng-template>     
+      </ion-slide>
+      <ion-slide> 
+          <p *ngIf="email && email.length == 0; else Listemail">Não há registros</p>
+          <ng-template #Listemail>   
+          <ion-list *ngFor="let email of email" >
+              <ion-card >
+                <ion-grid>
+                    <ion-row class="box-list">
+                        <ion-col col-12> 
+                          <p>{{email.titulo}}</p>
+                        </ion-col>
+                                              
+                    </ion-row>
+                </ion-grid>
+              <ion-card-content>
+                <ion-grid>
+                    <ion-row class="botoes">
+                        <ion-col col-6>
+                 
+                            {{email.conteudo}}
+                          </ion-col>
+                          <ion-col col-6>
+                        <div>
+                            <button ion-fab mini (click)="showConfirm(email.id,0)"><ion-icon name="trash"></ion-icon></button>
+                            <button ion-fab mini (click)="newSetor(email.id)"><ion-icon name="create"></ion-icon></button>
+                          
+                          </div>
+                      </ion-col >
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+              </ion-card> 
+          </ion-list>  
+        </ng-template> 
+      </ion-slide>
+      <ion-slide>   
+          <p *ngIf="site && site.length == 0; else Listsite">Não há registros</p>
+          <ng-template #Listsite> 
+          <ion-list *ngFor="let site of site" >
+              <ion-card >
+                <ion-grid>
+                    <ion-row class="box-list">
+                        <ion-col col-12> 
+                          <p>{{site.titulo}}</p>
+                        </ion-col>
+                                              
+                    </ion-row>
+                </ion-grid>
+              <ion-card-content>
+                <ion-grid>
+                    <ion-row class="botoes">
+                        <ion-col col-6>
+                 
+                            {{site.conteudo}}
+                          </ion-col>
+                          <ion-col col-6>
+                        <div>
+                            <button ion-fab mini (click)="showConfirm(site.id,0)"><ion-icon name="trash"></ion-icon></button>
+                            <button ion-fab mini (click)="newSetor(site.id)"><ion-icon name="create"></ion-icon></button>
+                          
+                          </div>
+                      </ion-col >
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+              </ion-card> 
+          </ion-list>
+        </ng-template> 
+      </ion-slide>
+      <ion-slide>   
+          <p *ngIf="facebook && facebook.length == 0; else Listfacebook">Não há registros</p>
+          <ng-template #Listfacebook> 
+          <ion-list *ngFor="let face of facebook" >
+              <ion-card >
+                <ion-grid>
+                    <ion-row class="box-list">
+                        <ion-col col-12> 
+                          <p>{{face.titulo}}</p>
+                        </ion-col>
+                                              
+                    </ion-row>
+                </ion-grid>
+              <ion-card-content>
+                <ion-grid>
+                    <ion-row class="botoes">
+                        <ion-col col-6>
+                 
+                            {{face.conteudo}}
+                          </ion-col>
+                          <ion-col col-6>
+                        <div>
+                            <button ion-fab mini (click)="showConfirm(face.id,0)"><ion-icon name="trash"></ion-icon></button>
+                            <button ion-fab mini (click)="newSetor(face.id)"><ion-icon name="create"></ion-icon></button>
+                          
+                          </div>
+                      </ion-col >
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+              </ion-card> 
+          </ion-list>
+        </ng-template> 
+      </ion-slide>
+      <ion-slide>   
+          <p *ngIf="instagram && instagram.length == 0; else Listinstagram">Não há registros</p>
+          <ng-template #Listinstagram>  
+          <ion-list *ngFor="let insta of instagram" >
+              <ion-card >
+                <ion-grid>
+                    <ion-row class="box-list">
+                        <ion-col col-12> 
+                          <p>{{insta.titulo}}</p>
+                        </ion-col>
+                                              
+                    </ion-row>
+                </ion-grid>
+              <ion-card-content>
+                <ion-grid>
+                    <ion-row class="botoes">
+                        <ion-col col-6>
+                 
+                            {{insta.conteudo}}
+                          </ion-col>
+                          <ion-col col-6>
+                        <div>
+                            <button ion-fab mini (click)="showConfirm(insta.id,0)"><ion-icon name="trash"></ion-icon></button>
+                            <button ion-fab mini (click)="newSetor(insta.id)"><ion-icon name="create"></ion-icon></button>
+                          
+                          </div>
+                      </ion-col >
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+              </ion-card> 
+          </ion-list>
+        </ng-template> 
+      </ion-slide>
+      <ion-slide>   
+          <p *ngIf="linkedin && linkedin.length == 0; else Listlinkedin">Não há registros</p>
+          <ng-template #Listlinkedin>  
+          <ion-list *ngFor="let link of linkedin" >
+              <ion-card >
+                <ion-grid>
+                    <ion-row class="box-list">
+                        <ion-col col-12> 
+                          <p>{{link.titulo}}</p>
+                        </ion-col>
+                                              
+                    </ion-row>
+                </ion-grid>
+              <ion-card-content>
+                <ion-grid>
+                    <ion-row class="botoes">
+                        <ion-col col-6>
+                 
+                            {{link.conteudo}}
+                          </ion-col>
+                          <ion-col col-6>
+                        <div>
+                            <button ion-fab mini (click)="showConfirm(link.id,0)"><ion-icon name="trash"></ion-icon></button>
+                            <button ion-fab mini (click)="newSetor(links.id)"><ion-icon name="create"></ion-icon></button>
+                          
+                          </div>
+                      </ion-col >
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+              </ion-card> 
+          </ion-list>
+        </ng-template> 
+      </ion-slide>
+     
+   
+        
+</ion-slides>
+          
+</div>
+<ion-fab  right bottom>
+  <button ion-fab color="primary" (click)="newSetor('')"><ion-icon name="add"></ion-icon></button>
+
+</ion-fab>
+</ion-content>

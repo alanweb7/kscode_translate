@@ -1,0 +1,149 @@
+page-login {
+    ion-content {
+        left: 0;
+        top: 15px;
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+        contain: layout size style;
+    }
+    .cadastro {
+        position: absolute;
+        width: 100%;
+        border-top: 1px solid rgba(0, 113, 248, 0.32);
+        padding: 15px 0;
+        left: 0;
+        bottom: 0;
+        text-align: center;
+        .termo {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            line-height: 30px;
+            top: -35px;
+            font-size: 12px;
+        }
+    }
+    ion-icon[class*="icone-logo"] {
+        background: url(../assets/img/kscode_black.png) no-repeat center;
+        background-size: 100%;
+        width: 80%;
+        height: 140px;
+        margin: 20px 0 10px 0;
+        mask-image: none;
+    }
+    .scroll-content {
+        padding: 80px 0 0 0;
+        margin-top: 0 !important;
+        background: rgba(255, 255, 255, 0.4); 
+        text-align: center;
+        > h2 {
+            padding: 0 20px;
+            text-align: center;
+            font-size: 1.3em;
+            text-shadow: 0 0 20px #000;
+            margin: 0;
+            color: white;
+        }
+        > h1 {
+            padding: 0 20px;
+            text-align: center;
+            font-size: 1.8em;
+            text-shadow: 0 0 20px #000;
+            margin: 10px 0 0 0;
+            font-weight: bold;
+            color: white;
+        }
+    }
+    .button{
+        margin-top: 15px; 
+        &.facebook {
+            background: rgb(5, 32, 73) !important;
+            background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+            background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+            background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+            color: #FFF;
+            font-weight: normal;
+        }
+        &.bt-voltar {
+            background: #6e7072;
+            color: #FFF;
+            font-weight: normal;
+        }
+
+        &.bt-cadatro {
+            background: #32db64;
+            color: #FFF;
+            font-weight: normal;
+            margin-top: 0;
+                height: 4rem;
+        }
+        
+    }
+    ion-content.pg-login.content {
+        background: url(../assets/fundo.png);
+        background-size: cover;
+        
+       
+    }
+    
+    .div-ou {
+        width: 100%;
+        height: 1px;
+        margin: 20px 0;
+        position: relative;
+        span {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 50%;
+            margin-left: -15px;
+            margin-top: -15px;
+            line-height: 30px;
+            font-size: 11px;
+        }
+    }
+    .index-formularios {
+        .item{
+            background: transparent;
+            padding-left: 0;
+            min-height: 3.5em;
+            margin-top: 10px;
+            .label{
+                margin: 0;
+                width: 30px;
+                display: flex;
+                justify-content: center;
+                .icon-md .icon-ios {
+                    margin: 0;
+                    color: rgb(5, 32, 73) ;
+                }
+            }
+            
+            .button{
+               
+                    background: rgb(5, 32, 73) !important;
+                    .icon-md  {
+                        margin: 5px; 
+                       width: 20px;
+                       text-align: center;
+                       color: #fff;
+                       font-size: 2.5em;
+                   }
+            }
+            
+            .text-input {
+                color: #555;
+                font-size: 12px;
+                text-align: left;
+                &::placeholder {
+                    color: #555;
+                    opacity: 0.5;
+                }
+            }
+
+        }
+    }
+  
+}

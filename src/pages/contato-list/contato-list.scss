@@ -1,0 +1,70 @@
+page-contato-list {
+    .fab[mini] {
+        margin: 7px 0px 0px 10px;
+        width: 35px;
+        height: 35px;
+        line-height: 22px;
+        float: right;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+        ion-icon {
+            font-size: 2em;
+        }
+    }
+    .fab {
+        background: rgb(5, 32, 73) !important;
+        background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+    }   
+    .button {
+        background: transparent;
+   
+    }
+    .box-list{
+         p{
+             text-align: left;
+         }
+    }
+    @media (min-width: 0px) {
+        .fab[mini] {
+            width: 35px;
+            height: 35px;
+            line-height: 22px;
+            float: right;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            ion-icon {
+                font-size: 2em
+            }
+        }
+    }
+ 
+    @media (min-width: 420px) {
+        .fab[mini] {
+            width: 33px;
+            height: 33px;
+            line-height: 23px;
+            float: right;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            ion-icon {
+                font-size: 1.8em
+            }
+        }
+    }
+ 
+    @media (min-width: 720px) {
+        .fab[mini] {
+            width: 30px;
+            height: 30px;
+            line-height: 20px;
+            float: right;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            ion-icon {
+                font-size: 1.5em
+            }
+        }
+    }
+}

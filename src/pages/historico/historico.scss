@@ -1,0 +1,37 @@
+page-historico {
+    ion-icon {
+        font-size: 30px;
+        text-align: center;
+    }
+    .item{
+        border-bottom: 0.1px solid #ccc;
+    }
+    .item .item-button {
+         padding:  1em; 
+        height: 30px;
+        font-size: 1.2rem;
+      }
+      .item ion-icon {
+        margin-right: 2px;
+        width: 20px;
+        text-align: center;
+        
+    }
+    .fab[mini] {
+        margin: 5px 0px 0px 5px;
+        width: 35px;
+        height: 35px;
+        line-height: 27px;
+        float: right;
+        box-shadow: none;
+        ion-icon {
+            font-size: 1.8em
+        }
+    }
+    .fab {
+        background: rgb(5, 32, 73) !important;
+        background: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+        background: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+    }    
+}

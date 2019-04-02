@@ -1,0 +1,35 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+        <ion-title>Recuperar senha</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only (click)="closeModal()">
+          <ion-icon name="close"></ion-icon>
+      </button>
+        </ion-buttons>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="pg-login">
+    <div class="alert alert-info" role="alert">
+        Digite seu email e depois vá em <b><i>RECUPERAR SENHA</i></b>, siga os passos enviados ao seu email para criar uma nova senha.
+    </div>
+     <div><p *ngIf="erro" ion-text color="{{class}}"> {{message}}</p></div>
+     <form class="" [formGroup]="loginForm">
+            <ion-list class="index-formularios">
+                <ion-item>
+                    <ion-label>
+                        <ion-icon name="mail"></ion-icon>
+                    </ion-label>
+                    <ion-input name="email" type="email" [(ngModel)]="email"  formControlName="email" placeholder="Seu email"></ion-input>
+                </ion-item>
+                  <div><p *ngIf="errorEmail" ion-text color="{{class}}"> {{messageEmail}}</p></div>
+            </ion-list>
+    </form> 
+    <div>
+        <button ion-button block (click)="forgotpass()">RECUPERAR SENHA</button>
+    </div>
+ 
+</ion-content>

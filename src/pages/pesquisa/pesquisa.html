@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-navbar color="primary"> 
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Pesquisa
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content scroll="true" padding class="pagePesquisa">
+<div class="scroll padding" style="transform: translate3d(0px, 0px, 0px) scale(1);width: 25%; float: left;" *ngFor="let link of links"  >
+
+  <div id="pesquisa-container{{link.id}}" style="margin-right:4px;margin-bottom: 5px" class=""> 
+    <a href="{{link.link}}" class="hrefLinks">
+    <div class="logoLink">
+      <img src="{{link.logo}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">     
+    </div>
+      <span style="display: block; text-align:center;color:black;" class="div2">{{link.nome}}</span>
+    </a>    
+  </div>
+</div>
+</ion-content>

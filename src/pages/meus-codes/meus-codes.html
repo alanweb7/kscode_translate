@@ -1,0 +1,62 @@
+<ion-header>
+   <ion-navbar color="primary">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+          <ion-buttons end>
+            <button ion-button icon-only (click)="showAlert()">
+                <ion-icon ios="ios-information-circle" md="md-information-circle"></ion-icon>
+             
+            </button>
+             
+              </ion-buttons>
+      <ion-title>Meus Codes</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  <ion-content>
+   <div  style="margin-bottom: 20%;">
+       <ion-searchbar [(ngModel)]="searchTerm" (ionInput)="setFilteredItems()"  (ionClear)="onCancel($event)" placeholder="Pesquisar code"></ion-searchbar>
+          <ion-list *ngFor="let code of meus_codes" >
+             <ion-card >
+                  <ion-grid>
+                      <ion-row class="box-list">
+                          <ion-col col-10> 
+                              <p>  {{code.code}}{{code.descricao}}</p>
+                          </ion-col>
+                          <ion-col col-2>
+                            <ion-badge>{{code.views}}</ion-badge>
+                          </ion-col>
+                      </ion-row>
+                  </ion-grid>
+                 
+                 <ion-card-content>
+                  <ion-grid>
+                      <ion-row class="botoes">
+                        <ion-col col-3>
+                           <img src="{{code.img_link}}">
+                        </ion-col>
+                        <ion-col col-9>
+                           <div>
+                              <button ion-fab mini (click)="showConfirm(code.id)"> <ion-icon name="trash">     </ion-icon></button>
+                           <!--    <button ion-fab mini (click)="showEnquete(code.id)"> <ion-icon name="clipboard"> </ion-icon></button>  -->
+                              <button ion-fab mini (click)="ShowMenu(code.id)">    <ion-icon name="create">    </ion-icon></button>
+                              <button ion-fab mini (click)="pushPage(code.code)">  <ion-icon name="eye">       </ion-icon></button>
+                              
+                            </div>
+                         
+                         </ion-col >
+                         
+                      </ion-row>
+                  </ion-grid>
+                </ion-card-content>
+             </ion-card> 
+          </ion-list>
+   <!--   </ng-template>  -->      
+  </div>
+  <ion-fab  right bottom>
+          <button ion-fab color="primary" (click)="validaPacote()"><ion-icon name="add"></ion-icon></button>
+      
+  </ion-fab>
+  </ion-content>
+  

@@ -1,0 +1,74 @@
+<ion-header>
+
+    <ion-navbar color="primary">
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>  
+      <ion-title>Contatos</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+   <form class="col s12" [formGroup]="cadastroForm" name="cadastroForm">
+      <ion-list class="index-formularios2">
+              <ion-item>
+                      <ion-label> <ion-icon name="flag"></ion-icon> País </ion-label>
+                      <ion-select [(ngModel)]="model.pais" (ionChange)="change_segmento($event)" [compareWith]="compareFn"  formControlName="pais" name="pais"  placeholder="Selecione">
+                        <ion-option  *ngFor="let p of pais"  [value]="p.name">{{p.dial_code}}-{{p.name}}</ion-option>
+                        
+                      </ion-select>
+                    </ion-item>
+          <ion-item>
+              <ion-label>
+                  <ion-icon name="logo-whatsapp"></ion-icon>
+              </ion-label>
+              <ion-input type="tel" placeholder="Whastapp" [(ngModel)]="model.whatsapp" formControlName="whatsapp" name="Whastapp" value="{{ctt_whatsapp}}"  [brmasker]="{mask:'(00) 00000-0000', len:15}"></ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label>
+                  <ion-icon name="phone-portrait"></ion-icon>
+              </ion-label>
+              <ion-input type="tel" placeholder="Telefone" [(ngModel)]="model.telefone" formControlName="telefone" name="telefone" value="{{ctt_telefone}}"  [brmasker]="{mask:'(00) 00000-0000', len:15}"></ion-input>
+          </ion-item>
+          
+          <ion-item>
+                  <ion-label>
+                      <ion-icon name="mail"></ion-icon>
+                  </ion-label>
+                  <ion-input type="email" placeholder="Email" [(ngModel)]="model.email" formControlName="email" name="email" value="{{ctt_email}}"></ion-input>
+          </ion-item>
+          <ion-item>
+                  <ion-label>
+                      <ion-icon name="globe"></ion-icon>
+                  </ion-label>
+                  <ion-input type="text" placeholder="Site" [(ngModel)]="model.site" formControlName="site" name="site" value="{{ctt_sites}}"></ion-input>
+           </ion-item>
+           <ion-item>
+                  <ion-label>
+                      <ion-icon ios="logo-facebook" md="logo-facebook"></ion-icon>
+                  </ion-label>
+                  <ion-input type="text" placeholder="Cole o link" [(ngModel)]="model.facebook" formControlName="facebook" name="facebook" value="{{ctt_facebook}}" ></ion-input>
+              </ion-item>
+              <ion-item>
+                  <ion-label>
+                      <ion-icon ios="logo-instagram" md="logo-instagram"></ion-icon>
+                  </ion-label>
+                  <ion-input type="text" placeholder="Cole o link" [(ngModel)]="model.instagram" formControlName="instagram" name="instagram" value="{{ctt_instagram}}"></ion-input>
+              </ion-item>
+              <ion-item>
+                      <ion-label>
+                          <ion-icon ios="logo-linkedin" md="logo-linkedin"></ion-icon>
+                      </ion-label>
+                      <ion-input type="text" placeholder="Cole o link" [(ngModel)]="model.linkedin" formControlName="linkedin" name="linkedin" value="{{ctt_linkedin}}"></ion-input>
+              </ion-item>
+      </ion-list>
+    
+      <div>
+          <button ion-button block color="primary" (click)="contato_Edit()">PUBLICAR</button>
+          
+      </div>
+   </form>
+  </ion-content>
+  

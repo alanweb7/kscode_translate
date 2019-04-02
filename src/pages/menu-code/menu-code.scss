@@ -1,0 +1,87 @@
+page-menu-code {
+
+    .topo{
+       .grid {
+           padding: 0;
+           margin-top: 0;
+           .row {
+               font: bold;
+               text-align: left;
+               margin-top: -20px;
+               
+               .col {
+                   padding: 0;
+                   margin-top: 0;
+                   text-align: left;
+                   p{
+                           text-align: center;
+                   }
+               }
+           }
+       }
+    }
+    .scroll-content {
+       margin-bottom: 0 !important;
+     }
+    
+   .box-menu{
+       height: 110px;
+       background: #cccc;
+       border-radius: 5px;
+       box-shadow: 0px 0px 15px #ccc;
+       color: rgb(5, 32, 73) !important;
+       color: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+       color: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+       color: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+       h3{
+           margin-top:8px;
+       }
+       ion-icon {
+           margin-top: 10px;
+           font-size: 3em;
+           color: rgb(5, 32, 73) !important;
+           color: -moz-linear-gradient(-45deg, rgba(5, 32, 73,1) 0%, rgb(0, 0, 0) 100%) !important;
+           color: -webkit-linear-gradient(-45deg, rgba(5, 32, 73 ,1) 0%, rgb(0, 0, 0) 100%) !important;
+           color: linear-gradient(135deg, rgba(5, 32, 73, 1) 0%, rgb(0, 0, 0) 100%) !important;
+       }
+   }
+  
+     ion-slides.segment-slide {
+       .card-list {
+           box-shadow: 0px 0px 15px #ccc;
+           div.desconto {
+               position: absolute;
+               background: rgba(0, 110, 248, 0.91);
+               color: #fff;
+               font-weight: bold;
+               top: 5px;
+               right: 5px;
+               width: 25px;
+               height: 25px;
+               line-height: 25px;
+               border-radius: 0 3px 0 90%;
+               text-align: right;
+               padding-right: 4px;
+               font-size: 7px;
+           }
+       }
+   }
+     ion-footer {
+       left: 0;
+       bottom: 0;
+       position: fixed;
+       z-index: 10;
+       display: block;
+       width: 100%;
+       overflow: inherit;
+       color: #fff;
+           font: bold;
+           text-align: center;
+       a{
+           color: #fff;
+           font: bold;
+           text-align: center;
+       }
+     }
+   }
+   

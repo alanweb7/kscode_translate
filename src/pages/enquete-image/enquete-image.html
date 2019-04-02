@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar color="primary">
+            <ion-title>ADICIONAR IMAGENS</ion-title>
+            
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content >
+    <div class="select" (click)="onActionSheet()"> <ion-icon color="primary" class="icone_tam" name="camera"></ion-icon> <ion-icon color="primary" class="icone" name="add"></ion-icon></div>
+   
+    <ion-list  reorder="true" (ionItemReorder)="reorderItem($event)">
+        <ion-item *ngFor="let image of images">
+              <ion-thumbnail  >
+                <img [src]="image.img_link"(click)="viewPhoto(image.img_link)"> 
+              </ion-thumbnail >  
+              <!-- <h3>{{image.img_link}}</h3> -->
+               <button ion-fab mini  item-end (click)="showConfirm_ItemArray(image.img_link)"  *ngIf="!image.id">
+                <ion-icon name="trash"></ion-icon>
+               </button>
+               <button ion-fab mini  item-end (click)="showConfirm(image.id)"  *ngIf="image.id">
+                    <ion-icon name="trash"></ion-icon>
+               </button>
+        </ion-item>
+       
+                
+     </ion-list>
+</ion-content>
+<ion-footer> 
+     <ion-toolbar color="primary">
+        <button ion-button block  class="facebook"  color="primary" (click)="enviar()">SELECIONAR</button>
+      </ion-toolbar>
+</ion-footer>

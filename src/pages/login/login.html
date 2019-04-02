@@ -1,0 +1,53 @@
+<ion-header>
+    <ion-navbar color="primary">
+            <button ion-button menuToggle>
+                <ion-icon name="menu"></ion-icon>
+            </button>
+        
+        <ion-title>
+              Entrar
+            </ion-title> 
+            
+    </ion-navbar>
+</ion-header>
+<ion-content padding class="pg-login">
+    <ion-icon name="icone-logo"></ion-icon>
+      <div><p *ngIf="erro" class="error"> {{message}}</p></div>
+    <form class="" [formGroup]="loginForm">
+        <ion-list class="index-formularios">
+            <ion-item>
+                <ion-label>
+                    <ion-icon color="primary" name="mail"></ion-icon>
+                </ion-label>
+                <ion-input name="email" type="email" [(ngModel)]="model.email"  formControlName="email" placeholder="Seu usuário"></ion-input>
+            </ion-item>
+            <div><p *ngIf="errorEmail" class="error"> {{messageEmail}}</p></div>  
+            <ion-item>
+                <ion-label>
+                    <ion-icon name="lock" color="primary"></ion-icon>
+                </ion-label>
+                <ion-input name="password" type="{{type}}" [(ngModel)]="model.password" formControlName="password" placeholder="Sua senha"></ion-input>
+                <button *ngIf="!showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+                <button *ngIf="showPass" ion-button clear color="dark" type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
+            </ion-item>
+            <div><p *ngIf="errorPassword" class="error"> {{messagePassword}}</p></div>
+        </ion-list>
+    </form> 
+    <div> 
+            <a (click)="recuperarsenhaModal()">Esqueceu sua senha?</a>
+            <button ion-button block (click)="login()" class="facebook">Entrar</button>  
+            <div class="div-ou"><span>OU</span></div>
+            <button class="bt-cadatro" ion-button block (click)="shopcode()">CRIAR MINHA CONTA</button>
+             
+                
+    </div>
+ 
+</ion-content>
+
+
+
+
+
+ 
+
+
