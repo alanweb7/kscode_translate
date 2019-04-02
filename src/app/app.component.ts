@@ -50,10 +50,11 @@ export class MyApp {
               ) {
 
       //translate service
-      platform.ready().then(() => {
         translateService.setDefaultLang('en');
-        translateService.use('en');           
-    });
+        platform.ready().then(() => {
+        statusBar.styleDefault();
+        splashScreen.hide();
+        });
 
       //native functions
     this.initializeApp();
