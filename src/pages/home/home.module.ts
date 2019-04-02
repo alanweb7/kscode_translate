@@ -5,12 +5,17 @@ import { OneSignal } from '@ionic-native/onesignal';
 import { Keyboard } from '@ionic-native/keyboard';
 //TRANSLATE
 import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';
 @NgModule({
   declarations: [
     HomePage,
   ],
   imports: [
     IonicPageModule.forChild(HomePage),
+    TranslateModule.forChild()
+  ],
+  exports: [
+    HomePage
   ],
   providers:[
     OneSignal,

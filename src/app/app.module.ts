@@ -31,7 +31,7 @@ import { Autosize} from '../directives/autosize/autosize';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar';
 
 export function HttpLoaderFactory(http: HttpClient) { 
-  return new TranslateHttpLoader(http); 
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json'); 
 }
 
 @NgModule({
